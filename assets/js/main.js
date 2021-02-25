@@ -14,4 +14,9 @@ window.onload = function () {
         menu_btn.classList.toggle('is-active');
         mobile_menu.classList.toggle('is-active');
     })
+
+    mobile_menu.addEventListener('click', function(){
+        menu_btn.classList.toggle('is-active');
+        mobile_menu.classList.toggle('is-active');
+    })
 }
