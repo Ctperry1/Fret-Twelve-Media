@@ -580,8 +580,16 @@ main {
                         }
                     }
 
+                    #subject {
+                        grid-column: 1/-1;
+                    }
+
                     .form-area {
                         grid-column: 1/-1;
+                    }
+
+                    #message {
+                        height: 12rem;
                     }
                 }
 
@@ -603,8 +611,7 @@ main {
     background: #313131;
     color: #9fecff;
     text-align: center;
-    padding: 2.5em 0;
-    padding-top: 0.5rem;
+    padding: 1.5rem 0;
     font-size: 1.5rem;
 }
 
@@ -630,7 +637,7 @@ main {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 0 0;
     padding: 0;
     font-size: 2.5rem;
 }
