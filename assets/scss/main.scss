@@ -342,7 +342,7 @@ main {
             .about-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-gap: 0.1rem;
+                grid-gap: 1rem;
                 margin: 0 auto;
 
                 @media (max-width: 767px) {
@@ -351,18 +351,27 @@ main {
                 }
 
                 .about-image {
+                    object-fit: contain;
                     display: block;
                     height: auto;
                     width: auto;
                     max-width: 18rem;
-                    max-height: 18rem;
+                    max-height: 100%;
                     margin: 0 auto;
+                    margin-bottom: 1rem;
+
+                    img {
+                        border-radius: 1rem;
+                        box-shadow: -0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.6);
+                    }
                 }
+
                 .content {
                     font-size: 1.25rem;
 
                     p {
                         padding-bottom: 0.75rem;
+                        text-align: center;
 
                         span {
                             font-style: italic;
@@ -479,6 +488,10 @@ main {
                     background-image: url(../images/mentoring.jpg);
                 }
 
+                &:nth-child(6) {
+                    background-image: url(../images/project2.png);
+                    background-position: top center;
+                }
                 .content {
                     opacity: 0;
                     color: #fff;
@@ -495,16 +508,17 @@ main {
                             font-size: 1.25rem;
                         }
                     }
+                }
 
-                    p {
-                        font-size: 1.125rem;
-                        margin-bottom: 1rem;
+                p {
+                    font-size: 1.125rem;
+                    margin-bottom: 1rem;
 
-                        @media (max-width: 1200px) {
-                            font-size: 1rem;
-                        }
+                    @media (max-width: 1200px) {
+                        font-size: 1rem;
                     }
                 }
+
                 &:hover {
                     .content {
                         opacity: 1;
