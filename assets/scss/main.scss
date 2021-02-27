@@ -577,11 +577,27 @@ main {
 
                         &:placeholder {
                             color: #aaa;
+                            &.after {
+                                content: "*";
+                                color: crimson;
+                            }
+                        }
+                    }
+
+                    #email {
+                        &.after {
+                            content: "*";
+                            color: crimson;
                         }
                     }
 
                     #subject {
                         grid-column: 1/-1;
+
+                        &.after {
+                            content: "*";
+                            color: crimson;
+                        }
                     }
 
                     .form-area {
@@ -590,6 +606,11 @@ main {
 
                     #message {
                         height: 12rem;
+
+                        &.after {
+                            content: "*";
+                            color: crimson;
+                        }
                     }
                 }
 

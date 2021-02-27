@@ -1,5 +1,7 @@
 <?php
 
+include(__DIR__."../../index.php");
+
 $error = $name_error = $email_error = $subject_error = $message_error = "";
 $name = $email = $subject = $message = "";
 
@@ -8,14 +10,10 @@ $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
-$formcontent = "From: $name \n Subject: $subject";
-$recipient = "ctperry1@yahoo.com";
-$subject = "Contact Form";
-$mailheader = "From: $email \r\n";
-mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-
 if ($_POST['submit']) {
-
+    header("location: http://example.com");
+    exit;
+        
     if (!preg_match('/^[a-z ]+$/i', $name)) {
         $error .= $name_error .= 'Name missing or incorrect<br>';
     }
@@ -24,12 +22,16 @@ if ($_POST['submit']) {
         $error .= $email_error .= 'Missing email<br>';
     }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $email_error = "Invalid email format<br>";
+    }
+
     if (empty($subject)) {
-        $error .= $subject_error .= 'Missing title<br>';
+        $error .= $subject_error .= 'Missing subject<br>';
     }
 
     if (empty($message)) {
-        $error .= $message_error .= 'Missing comment<br>';
+        $error .= $message_error .= 'Missing message<br>';
     }
 
     if ($error) {
@@ -44,9 +46,7 @@ if ($_POST['submit']) {
         $mailsent = mail($to, $subject, $messages, $headers);
 
         if ($mailsent) {
-
             $sent = true;
-
             $name = "";
             $email = "";
             $subjectTitle = "";
@@ -54,4 +54,3 @@ if ($_POST['submit']) {
         }
     }
 }
-echo "Thank You!";
