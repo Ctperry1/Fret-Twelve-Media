@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grey Man Web Designs</title>
+    <title>Fret Twelve Designs</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,7 +17,7 @@
 <body>
     <header>
         <div class="container">
-            <h2><a href="#"><span>Grey Man</span> Web Designs</a></h2>
+            <h2><a href="#"><span>Fret Twelve</span> Designs</a></h2>
             <nav>
                 <a href="#">Home</a>
                 <a href="#about">About</a>
@@ -75,7 +76,7 @@
                             In his spare time, Tyler can be found spending time with his wife and
                             two daughters, creating new recipes, or composing new music with his
                             guitar. While he is based in coastal South Carolina, Tyler is always
-                            searching for new clients and ways to push Grey Man Web Designs past the
+                            searching for new clients and ways to push Fret Twelve Designs past the
                             borders of his home state.
                         </p>
                     </div>
@@ -94,7 +95,7 @@
                             <img src="./assets/images/websites.jpg" alt="Website Services" class="img" />
                         </figure>
                         <div class="content">
-                            <h3>Websites</h3>
+                            <h3>Front-End and UI Design</h3>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis beatae,
                                 cumque mollitia laudantium fugiat perspiciatis saepe. Delectus praesentium
@@ -193,6 +194,7 @@
             <div class="container">
                 <h2>Contact</h2>
 
+                <?php echo((!empty($errorMessage)) ? $errorMessage : '');?>
                 <form action="./php/mail.php" method="POST">
                     <div class="form-grid">
                         <input type="text" name="name" id="name" placeholder="Name" class="form-element" />
@@ -203,6 +205,48 @@
                     <div class="right-align">
                         <input type="submit" value="Send Message" class="button"/>
                     </div>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+                    <script>
+                        const constraints = {
+                            name: {
+                                presence: { allowEmpty: false }
+                            },
+                                email: {
+                                    presence: { allowEmpty: false },
+                                        email: true
+                            },
+                                message: {
+                                presence: { allowEmpty: false }
+                            }
+                        };
+
+                    const form = document.getElementById('contact-form');
+
+                    form.addEventListener('submit', function (event) {
+                        const formValues = {
+                            name: form.elements.name.value,
+                            email: form.elements.email.value,
+                            message: form.elements.message.value
+                        };
+
+                    const errors = validate(formValues, constraints);
+
+                    if (errors) {
+                        event.preventDefault();
+
+                        const errorMessage = Object
+
+                        .values(errors)
+                        .map(function (fieldValues) {
+                            return fieldValues.join(', ')
+                        })
+
+                        .join("\n");
+
+                        alert(errorMessage);
+                        }
+                        }, false);
+                    </script>
                 </form>
             </div>
         </section>
@@ -236,7 +280,7 @@
             <script>
                 document.write(new Date().getFullYear())
             </script>
-        <p>Built by Grey Man Web Designs</p>
+        <p>Built by Fret Twelve Designs</p>
         <p>All Rights Reserved</p>
         </p>
     </footer>
