@@ -1,6 +1,7 @@
 <?php
 
 require(__DIR__."../../index.php");
+require(__DIR__."../projects");
 require(__DIR__."../vendor/autoload");
 
 use PHPMailer\PHPMailer\PHPMailer;

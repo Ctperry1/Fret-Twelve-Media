@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fret Twelve Designs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fret Twelve Media</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,12 +18,12 @@
 <body>
     <header>
         <div class="container">
-            <h2><a href="#"><span>Fret Twelve</span> Designs</a></h2>
+            <h2><a href="#"><span>Fret Twelve</span> Media</a></h2>
             <nav>
-                <a href="#">Home</a>
+                <a href="./index.php">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
+                <a href="./projects.php">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
             <button class="hamburger">
@@ -31,10 +32,10 @@
         </div>
     </header>
     <nav class="mobile-nav">
-        <a href="#">Home</a>
+        <a href="./index.php">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
+        <a href="./projects.php">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
     <main>
@@ -76,7 +77,7 @@
                             In his spare time, Tyler can be found spending time with his wife and
                             two daughters, creating new recipes, or composing new music with his
                             guitar. While he is based in coastal South Carolina, Tyler is always
-                            searching for new clients and ways to push Fret Twelve Designs past the
+                            searching for new clients and ways to push Fret Twelve Media past the
                             borders of his home state.
                         </p>
                     </div>
@@ -97,9 +98,9 @@
                         <div class="content">
                             <h3>Front-End and UI Design</h3>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis beatae,
-                                cumque mollitia laudantium fugiat perspiciatis saepe. Delectus praesentium
-                                numuam quas?
+                                From color schemes to to images, user interfaces to interactive features,
+                                Fret Twelve Media offers both front-end web and user interface design
+                                so you can make sure your website looks as good as your products are.
                             </p>
                         </div>
                     </div>
@@ -111,9 +112,10 @@
                         <div class="content">
                             <h3>Apps</h3>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis beatae,
-                                cumque mollitia laudantium fugiat perspiciatis saepe. Delectus praesentium
-                                numuam quas?
+                                Need a website and an app? Have a website but need an app? Fret Twelve
+                                Media can help you there. Offering services for both websites and apps,
+                                you can be sure that your web and mobile needs are taken care of with 
+                                style.
                             </p>
                         </div>
                     </div>
@@ -123,11 +125,11 @@
                             <img src="./assets/images/games.jpg" alt="Game Services" class="img" />
                         </figure>
                         <div class="content">
-                            <h3>Games</h3>
+                            <h3>Site Maintenance</h3>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis beatae,
-                                cumque mollitia laudantium fugiat perspiciatis saepe. Delectus praesentium
-                                numuam quas?
+                                Have a website with Fret Twelve Media or even someone else, but need it
+                                updated or maintained regularly? Fret Twelve Media offers services for 
+                                site maintenance and updates as often or as little as you need it.
                             </p>
                         </div>
                     </div>
@@ -185,7 +187,7 @@
                 </div>
 
                 <div class="center">
-                    <a href="#" class="button">View More</a>
+                    <a href="./projects.php" class="button">View More</a>
                 </div>
             </div>
         </section>
@@ -280,7 +282,7 @@
             <script>
                 document.write(new Date().getFullYear())
             </script>
-        <p>Built by Fret Twelve Designs</p>
+        <p>Built by Fret Twelve Media</p>
         <p>All Rights Reserved</p>
         </p>
     </footer>
