@@ -195,7 +195,7 @@
                         <input type="subject" name="subject" id="subject" placeholder="Subject" class="form-element" />
                         <textarea name="message" id="message" placeholder="Message" class="form-area" required></textarea>
                     </div>
-                    <div class="recaptcha"><div class="g-recaptcha" data-sitekey="6LcCxW4aAAAAAE4NIVrMLJbWTYb0fMSDH7oNS01t"></div></div>
+                    <div class="recaptcha"><div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY"></div></div>
                     <div class="right-align">
                         <input type="submit" value="Send Message" class="button"/>
                     </div>
