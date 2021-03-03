@@ -11,16 +11,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/projects.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h2><a href="#"><span>Fret Twelve</span> Media</a></h2>
+            <div class="logo-contain"><a href="./index.php"><img src="./assets/images/f12logo.png" alt="Fret Twelve Media" class="logo" /></a></div>
                 <nav>
                     <a href="./index.php">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
+                    <a href="./index.php#about">About</a>
+                    <a href="./index.php#services">Services</a>
                     <a href="./projects.php">Projects</a>
                     <a href="#contact">Contact</a>
                 </nav>
@@ -31,8 +41,8 @@
         </header>
         <nav class="mobile-nav">
             <a href="./index.php">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="./index.php#about">About</a>
+            <a href="./index.php#services">Services</a>
             <a href="./projects.php">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -52,7 +62,6 @@
             <div class="container">
                 <h2>Contact</h2>
 
-                <?php echo((!empty($errorMessage)) ? $errorMessage : '');?>
                 <form action="./php/mail.php" method="POST">
                     <div class="form-grid">
                         <input type="text" name="name" id="name" placeholder="Name" class="form-element" />
@@ -60,51 +69,10 @@
                         <input type="subject" name="subject" id="subject" placeholder="Subject" class="form-element" />
                         <textarea name="message" id="message" placeholder="Message" class="form-area" required></textarea>
                     </div>
+                    <div class="recaptcha"><div class="g-recaptcha" data-sitekey="6LcCxW4aAAAAAE4NIVrMLJbWTYb0fMSDH7oNS01t"></div></div>
                     <div class="right-align">
                         <input type="submit" value="Send Message" class="button"/>
                     </div>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-                    <script>
-                        const constraints = {
-                            name: {
-                                presence: { allowEmpty: false }
-                            },
-                                email: {
-                                    presence: { allowEmpty: false },
-                                        email: true
-                            },
-                                message: {
-                                presence: { allowEmpty: false }
-                            }
-                        };
-
-                    const form = document.getElementById('contact-form');
-
-                    form.addEventListener('submit', function (event) {
-                        const formValues = {
-                            name: form.elements.name.value,
-                            email: form.elements.email.value,
-                            message: form.elements.message.value
-                        };
-
-                    const errors = validate(formValues, constraints);
-
-                    if (errors) {
-                        event.preventDefault();
-
-                        const errorMessage = Object
-
-                        .values(errors)
-                        .map(function (fieldValues) {
-                            return fieldValues.join(', ')
-                        })
-
-                        .join("\n");
-
-                        alert(errorMessage);
-                        }
-                        }, false);
-                    </script>
                 </form>
             </div>
         </section>
