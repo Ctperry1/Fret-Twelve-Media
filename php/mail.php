@@ -14,7 +14,7 @@ $message = $_POST['message'];
 $mail = new PHPMailer(true);
 
 if (!empty($_POST['g-recaptcha-response'])) {
-    $secret = '6LcCxW4aAAAAAC2lQx65DW1hZ_sg8r3JG8YqTxxS';
+    $secret = 'RECAPTCHA_SECRET_KEY';
     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
     $responseData = json_decode($verifyResponse);
 
@@ -31,23 +31,23 @@ if (!empty($_POST['g-recaptcha-response'])) {
         //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.dreamhost.com';                    // Set the SMTP server to send through
+    $mail->Host       = 'smtp.example.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'tylerperry@frettwelvemedia.com';                     // SMTP username
-    $mail->Password   = 'MHPCTP2o15!';                               // SMTP password
+    $mail->Username   = 'example@example.com';                     // SMTP username
+    $mail->Password   = 'Secret_Password';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'tylerperry@frettwelvemedia.com';                     //SMTP username
-    $mail->Password   = 'MHPCTP2o15!';                               //SMTP password
+    $mail->Username   = 'example@example.com';                     //SMTP username
+    $mail->Password   = 'Secret_Password';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     //Recipients
-    $mail->setFrom('tylerperry@frettwelvemedia.com', $name);
-        $mail->addAddress('tylerperry@frettwelvemedia.com', 'Tyler Perry');     // Add a recipient
+    $mail->setFrom('example@example.com', $name);
+        $mail->addAddress('example@example.com', 'My Name');     // Add a recipient
         //$mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo($email, $subject);
         // Content
