@@ -21,7 +21,7 @@ window.onload = function () {
     });
 
     //Get the button:
-    mybutton = document.getElementById("myBtn");
+    mybutton = document.getElementById("back2Top");
 
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {

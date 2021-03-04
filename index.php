@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">&#10148;</button>
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
     <header>
         <div class="container">
             <div class="logo-contain"><a href="./index.php"><img src="./assets/images/f12logo.png" alt="Fret Twelve Media Logo" class="logo" /></a></div>

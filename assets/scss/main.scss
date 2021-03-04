@@ -7,24 +7,29 @@
     font-family: "Roboto Slab", serif;
 }
 
-#myBtn {
+#back2Top {
+    width: 3.5rem;
+    line-height: 3.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 999;
     display: none;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
     position: fixed;
-    bottom: 1.25rem;
-    right: 2rem;
-    z-index: 99;
-    border: none;
-    outline: none;
+    bottom: 2rem;
+    right: 1.5rem;
     background-color: #12002f;
     color: #9fecff;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.9rem;
+    text-align: center;
     font-size: 2.5rem;
-    transform: rotate(270deg);
+    text-decoration: none;
 }
-
-#myBtn:hover {
+#back2Top:hover {
     background-color: #313131;
     color: #fff;
 }
@@ -174,7 +179,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
     z-index: 99;
 
     .container {
@@ -503,6 +509,7 @@ main {
                 .content {
                     padding: 1rem;
                     cursor: default;
+                    text-align: center;
 
                     p {
                         padding-top: 0.5rem;
@@ -607,9 +614,12 @@ main {
                 }
 
                 .recaptcha {
-                    width: 45%;
-                    margin: 0 auto;
-                    padding-bottom: 1rem;
+                    text-align: center;
+                    padding-bottom: 0.75rem;
+
+                    .g-recaptcha {
+                        display: inline-block;
+                    }
                 }
                 .right-align {
                     text-align: center;
