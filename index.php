@@ -7,12 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fret Twelve Media</title>
 
+    <!-- Import font-awesome, google fonts, google recaptcha, css style sheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+    <!-- Favicon Section -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -23,10 +25,13 @@
 </head>
 
 <body>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">&#10148;</button>
+    <!-- Back to top button -->
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
     <header>
         <div class="container">
+            <!-- Logo and link to home page -->
             <div class="logo-contain"><a href="./index.php"><img src="./assets/images/f12logo.png" alt="Fret Twelve Media Logo" class="logo" /></a></div>
+            <!-- Navigation Menu Items -->
             <nav>
                 <a href="./index.php">Home</a>
                 <a href="#about">About</a>
@@ -34,11 +39,13 @@
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <!-- Mobile hamburger menu button -->
             <button class="hamburger">
                 <div class="bar"></div>
             </button>
         </div>
     </header>
+    <!-- Mobile navigation menu -->
     <nav class="mobile-nav">
         <a href="./index.php">Home</a>
         <a href="#about">About</a>
@@ -47,6 +54,7 @@
         <a href="#contact">Contact</a>
     </nav>
     <main>
+        <!-- Banner image and text -->
         <section class="banner">
             <div class="container">
                 <div class="slide-left">
@@ -62,6 +70,7 @@
             </div>
         </section>
 
+        <!-- About section with image and bio -->
         <div id="about"> </div>
         <section class="about">
             <div class="container">
@@ -73,7 +82,7 @@
                     </div>
                     <div class="content">
                         <p>
-                            Meet Tyler Perry (no, not<span>that</span> Tyler Perry). Husband.
+                            Meet Tyler Perry (no, not <span>that</span> Tyler Perry). Husband.
                             Father. Web developer. Mostly a self-taught front-end developer, Tyler also 
                             has a background in computer science and web design courses at Coastal Carolina
                             University in 2014 and 2015. Since then, he has furthered his learning to include
@@ -92,6 +101,7 @@
             </div>
         </section>
 
+        <!-- Services section -->
         <div id="services"> </div>
         <section class="services">
             <div class="container">
@@ -143,6 +153,7 @@
             </div>
         </section>
 
+        <!-- Projects section with images, summary, and relavant links -->
         <section class="projects" id="projects">
             <div class="container">
                 <h2>Projects</h2>
@@ -177,13 +188,14 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Button with link to projects page -->
                 <div class="center">
                     <a href="./projects.php" class="button">View More</a>
                 </div>
             </div>
         </section>
 
+        <!-- Contact form with google recaptcha -->
         <section class="contact" id="contact">
             <div class="container">
                 <h2>Contact</h2>
@@ -195,7 +207,7 @@
                         <input type="subject" name="subject" id="subject" placeholder="Subject" class="form-element" />
                         <textarea name="message" id="message" placeholder="Message" class="form-area" required></textarea>
                     </div>
-                    <div class="recaptcha"><div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY"></div></div>
+                    <!--<div class="recaptcha"><div class="g-recaptcha" data-sitekey="sitekey"></div></div>-->
                     <div class="right-align">
                         <input type="submit" value="Send Message" class="button"/>
                     </div>
@@ -204,6 +216,7 @@
         </section>
     </main>
 
+    <!-- footer section with social media links and copyright -->
     <footer class="footer">
         <ul class="social-list">
             <li class="social-list__item">
@@ -236,7 +249,7 @@
         <p>All Rights Reserved</p>
         </p>
     </footer>
-
+    <!-- script for JS file -->
     <script src="./assets/js/main.js"></script>
 </body>
 
