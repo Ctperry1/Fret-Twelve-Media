@@ -1,3 +1,4 @@
+/*global*/
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +7,11 @@
 
     font-family: "Roboto Slab", serif;
 }
-
+/*back to top button styling*/
 #back2Top {
-    width: 40px;
-    line-height: 40px;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    border-radius: 1rem;
     overflow: hidden;
     z-index: 999;
     display: none;
@@ -20,19 +22,19 @@
     -ms-transform: rotate(270deg);
     transform: rotate(270deg);
     position: fixed;
-    bottom: 50px;
-    right: 0;
-    background-color: #ddd;
-    color: #555;
+    bottom: 2rem;
+    right: 1.5rem;
+    background-color: #12002f;
+    color: #9fecff;
     text-align: center;
-    font-size: 30px;
+    font-size: 2.5rem;
     text-decoration: none;
 }
 #back2Top:hover {
-    background-color: #ddf;
-    color: #000;
+    background-color: #313131;
+    color: #fff;
 }
-
+/*set overall container*/
 .container {
     width: 100%;
     max-width: 1600 px;
@@ -50,7 +52,7 @@
         padding-right: 2rem;
     }
 }
-
+/*hamburger button styling*/
 .hamburger {
     position: relative;
     display: block;
@@ -69,9 +71,10 @@
     @media (max-width: 360px) {
         float: right;
         text-align: right;
+        right: 0;
     }
 }
-
+/*hamburger button styling*/
 .hamburger .bar,
 .hamburger:after,
 .hamburger:before {
@@ -83,7 +86,7 @@
     margin: 0.375rem 0rem;
     transition: 0.4s;
 }
-
+/*transform hamburger menu into X*/
 .hamburger.is-active:before {
     transform: rotate(-45deg) translate(-0.5rem, 0.375rem);
 }
@@ -95,7 +98,7 @@
 .hamburger.is-active .bar {
     opacity: 0;
 }
-
+/*mobile nav menu styling*/
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -108,11 +111,11 @@
     padding-top: 7.5rem;
     transition: 0.4s;
 }
-
+/*show mobile nav menu*/
 .mobile-nav.is-active {
     left: 0;
 }
-
+/*mobile nav menu links*/
 .mobile-nav a {
     display: block;
     width: 100%;
@@ -128,7 +131,7 @@
 .mobile-nav a:hover {
     background-color: #24104f;
 }
-
+/*hide mobile nav on larger screen*/
 @media (min-width: 971px) {
     .mobile-nav {
         display: none;
@@ -138,7 +141,7 @@
         display: none;
     }
 }
-
+/*overall section styling*/
 section {
     h2 {
         text-align: center;
@@ -147,7 +150,7 @@ section {
         font-size: 2.25rem;
     }
 }
-
+/*overall button styling*/
 .button {
     appearance: none;
     border: none;
@@ -167,11 +170,11 @@ section {
         font-size: 1.25rem;
     }
 }
-
+/*image styling overall*/
 img {
     max-width: 100%;
 }
-
+/*header styling*/
 header {
     color: #fff;
     position: fixed;
@@ -179,17 +182,18 @@ header {
     left: 0;
     width: 100%;
     z-index: 99;
-
+    /*styling for logo and menu*/
     .container {
         padding-top: 2rem;
         padding-bottom: 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        /*hide logo on mobile*/
         .logo-contain {
             @media (max-width: 480px) {
-                display: none;
+                visibility: hidden;
+                max-width: 70%;
             }
             a {
                 text-decoration: none;
@@ -203,7 +207,7 @@ header {
                 }
             }
         }
-
+        /*nav bar grid and styling*/
         nav {
             display: grid;
             gap: 1rem;
@@ -220,7 +224,7 @@ header {
             }
         }
     }
-
+    /*background color and size for sticky nav bar*/
     &.is-scrolling {
         background-color: #12002f;
 
@@ -230,8 +234,9 @@ header {
         }
     }
 }
-
+/*body section styling*/
 main {
+    /*banner image and text styling*/
     section.banner {
         color: #fff;
         position: relative;
@@ -255,7 +260,7 @@ main {
             z-index: 0;
             background-color: #12002f;
             opacity: 0.8;
-
+            /*animated linear gradient background*/
             background: linear-gradient(
                 -45deg,
                 #2f1200,
@@ -278,7 +283,7 @@ main {
                 }
             }
         }
-
+        /*text container styling and text animation*/
         .container {
             position: relative;
             z-index: 1;
@@ -323,7 +328,7 @@ main {
             }
         }
     }
-
+    /*styling for contact form*/
     .contact {
         background-color: #12002f; /*gradient?*/
         padding-top: 1rem;
@@ -342,7 +347,7 @@ main {
                 display: block;
                 margin: 0 auto;
                 padding-bottom: 0.5rem;
-
+                /*layout for contact form grid*/
                 .form-grid {
                     display: grid;
                     grid-gap: 1rem;
@@ -405,7 +410,7 @@ main {
                         }
                     }
                 }
-
+                /*center recaptcha widget*/
                 .recaptcha {
                     text-align: center;
                     padding-bottom: 0.75rem;
@@ -427,7 +432,7 @@ main {
         display: none;
     }
 }
-
+/*footer styling*/
 .footer {
     background: #313131;
     color: #9fecff;

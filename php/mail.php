@@ -1,70 +1,50 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require('../vendor/autoload.php');
+
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPmailer\SMTP;
 
-require(__DIR__."../../vendor/autoload.php");
-
+//Get input from contact form
 $name = $_POST['name'];
 $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
+//Create a new PHPMailer instance
 $mail = new PHPMailer(true);
+//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+$mail->CharSet = PHPMailer::CHARSET_UTF8;
 
-if (!empty($_POST['g-recaptcha-response'])) {
-    $secret = '6LcCxW4aAAAAAC2lQx65DW1hZ_sg8r3JG8YqTxxS';
-    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
-    $responseData = json_decode($verifyResponse);
+//Set SMTP settings
+$mail->isSMTP();
+$mail->Host = 'smtp.example.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'example@example.com';
+$mail->Password = 'password';
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+$mail->Port = 465;
 
-    if ($responseData->success) {
-        $message = "g-recaptcha varified successfully";
-    } else {
-        $message = "Some error in vrifying g-recaptcha";
-    }
-    echo $message;
+//Set email/name for send and recipient.
+$mail->setFrom('example@example.com', $name);
+$mail->addAddress('example@example.com');
+//$mail->addReplyTo($email, $name);
+//$mail->isHTML(true);
 
+//Build email subject and body
+$mail->Name = $name;
+$mail->Subject = 'Contact form: ' . $subject;
+$mail->Body    = "Contact form submission\n\n" . $email . "\n\n". $message;
+$mail->AltBody = '';
 
-
-    try {
-        //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.dreamhost.com';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'tylerperry@frettwelvemedia.com';                     // SMTP username
-    $mail->Password   = 'MHPCTP2o15!';                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'tylerperry@frettwelvemedia.com';                     //SMTP username
-    $mail->Password   = 'MHPCTP2o15!';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 465;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-    //Recipients
-    $mail->setFrom('tylerperry@frettwelvemedia.com', $name);
-        $mail->addAddress('tylerperry@frettwelvemedia.com', 'Tyler Perry');     // Add a recipient
-        //$mail->addAddress('ellen@example.com');               // Name is optional
-        $mail->addReplyTo($email, $subject);
-        // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = $subject;
-        $mail->From = $email;
-        $mail->From = $name;
-        $mail->Body    = $message;
-        $mail->AltBody = $message;
-        $mail->send();
-        header("Location: https://frettwelvemedia.com");
-        echo "Thank you, we'll be in touch!.";
-        die();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
+//Validate google recaptcha
+if (!$mail->send()) {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    header("Location: https://frettwelvemedia.com");
+    echo 'Message sent!';
 }
