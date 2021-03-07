@@ -22,16 +22,16 @@ $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
 //Set SMTP settings
 $mail->isSMTP();
-$mail->Host = 'smtp.example.com';
+$mail->Host = 'smtp.dreamhost.com';
 $mail->SMTPAuth = true;
-$mail->Username = 'example@example.com';
-$mail->Password = 'password';
+$mail->Username = 'tylerperry@frettwelvemedia.com';
+$mail->Password = 'MHPCTP2o15!';
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 $mail->Port = 465;
 
 //Set email/name for send and recipient.
-$mail->setFrom('example@example.com', $name);
-$mail->addAddress('example@example.com');
+$mail->setFrom('tylerperry@frettwelvemedia.com', $name);
+$mail->addAddress('tylerperry@frettwelvemedia.com');
 //$mail->addReplyTo($email, $name);
 //$mail->isHTML(true);
 

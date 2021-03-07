@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fret Twelve Media</title>
+    <title>Fret Twelve Media Pojects</title>
 
     <!-- Import font-awesome, google fonts, google recaptcha, css style sheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
@@ -43,28 +43,99 @@
             <button class="hamburger">
                 <div class="bar"></div>
             </button>
+        </div>
+    </header>
+    <nav class="mobile-nav">
+        <a href="./index.php">Home</a>
+        <a href="./index.php#about">About</a>
+        <a href="./index.php#services">Services</a>
+        <a href="./projects.php">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <!-- Banner image and text -->
+        <section class="banner">
+            <div class="container">
+                <div class="slide-up">
+                    <h1>
+                        A comprehensive list <br class="hide-mob" />
+                        <span>of all projects</span> to date.
+                    </h1>
+                </div>
             </div>
-        </header>
-        <nav class="mobile-nav">
-            <a href="./index.php">Home</a>
-            <a href="./index.php#about">About</a>
-            <a href="./index.php#services">Services</a>
-            <a href="./projects.php">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <main>
-            <!-- Banner image and text -->
-            <section class="banner">
-                <div class="container">
-                    <div class="slide-up">
-                        <h1>
-                            A comprehensive list <br class="hide-mob" />
-                            <span>of all projects</span> to date.
-                        </h1>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+
+                <div class="projects-grid">
+                    <div class="project">
+                        <figure class="img-box">
+                            <img src="./assets/images/project1.png" alt="Jill Lindstrand Realty" class="img" />
+                        </figure>
+                        <div class="content">
+                            <h3>Jill Lindstrand Realty</h3>
+                            <p>
+                                The website that started it all, this site, built on Wordpress and designed with
+                                Divi along with some CSS, was created for a local realtor who needed an update.
+                            </p>
+                            <a href="https://jilllindstrandrealty.com/" target="_blank" class="button">View Site</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <figure class="img-box">
+                            <img src="./assets/images/project2.png" alt="Grey Man Web Designs" class="img" />
+                        </figure>
+                        <div class="content">
+                            <h3>Grey Man Web Designs</h3>
+                            <p>
+                                The first portfolio site built to showcase skills and projects. The site was
+                                hand coded using basic HTML, CSS, and JavaScript.
+                            </p>
+                            <a href="https://greymanwebdesigns.com/" target="_blank" class="button">View Site</a>
+                            <a href="https://github.com/Ctperry1/Portfolio-Site" target="_blank" class="button">View Code</a>
+                        </div>
                     </div>
                 </div>
-            </section>
-    
+                <!-- Button with link to projects page -->
+                <div class="center">
+                    <a href="./projects.php" class="button">View More</a>
+                </div>
+            </div>
+
+        <!--<section class="projects-links">
+            <div class="wrapper">
+                <h2>Projects</h2>
+
+                <div class="projects-container">
+                <?php
+                include_once('./php/insert.php');
+
+                $sql = "SELECT * FROM websitegallery ORDER BY id DESC";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    echo "SQL statement failed.";
+                } else {
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<a href="">
+                        <div style="background-image: url(./assets/images/gallery/'.$row["imgFullName"].');"></div>
+                        <h3>'.$row["title"].'</h3>
+                        <p>'.$row["descrip"].'</p>
+                    </a>';
+                    }
+                }
+                ?>
+                </div>
+                
+
+            </div>
+        </section>-->
+
         <!-- Contact form with google recaptcha -->
         <section class="contact" id="contact">
             <div class="container">
